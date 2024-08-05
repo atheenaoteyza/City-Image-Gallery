@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e02525; /* Background color for body */
+}
+
+.floating-container {
+  position: fixed; /* Fixed position to make it float on the body */
+  bottom: 20%; /* Distance from the bottom of the viewport */
+  right: -20%; /* Start position from the right of the viewport */
+  background-color: transparent; /* Transparent background to show only items */
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
+  z-index: 1000; /* Ensure it sits on top of other content */
+  display: flex;
+  gap: 20px;
+  height: 40%;
+  transition: right 0.3s ease; /* Smooth transition for movement */
+}
+
+.floating-container:hover {
+  right: 0; /* Move container into view when hovered */
+}
+
+.flex-items {
+  margin: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8); /* Background color */
+  padding: 20px; /* Padding inside the items */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
+  opacity: 100%; /* Full opacity */
+  transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition for movement and scaling */
+}
+
+.flex-items:hover {
+  transform: scale(1.2) translate(-10px, -10px); /* Scale and move items on hover */
+  z-index: 1100; /* Ensure the hovered item is above others */
+}
+.one {
+  background-color: blue;
+}
+.two {
+  background-color: green;
+}
+.three {
+  background-color: red;
+}
+.four {
+  background-color: blueviolet;
+}
