@@ -27,6 +27,9 @@ function getArrayOfImgUrl(fetchedResult) {
 
 async function switchBg(array) {
   const flexItems = document.querySelectorAll(".flex-items");
+  document.querySelector(
+    ".background"
+  ).style.backgroundImage = `url(${array[1]})`;
   for (let i = 0; i < array.length; i++) {
     if (i < array.length) {
       flexItems[i].style.backgroundImage = `url(${array[i]})`;

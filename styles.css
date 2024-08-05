@@ -12,6 +12,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -30,12 +31,13 @@ input[type="text"] {
   border-right: 3px solid #000000;
   border-top: 0.5px solid #000000;
   border-left: 0.5px solid #000000;
-
+  min-height: 2rem;
   border-radius: 4px; /* Rounded corners for input */
   transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
   background-color: var(--dark-color);
   color: white;
   opacity: 100%;
+  font-size: 1.5rem;
 }
 input[type="text"]:hover {
   cursor: pointer;
@@ -51,6 +53,8 @@ input[type="text"]:hover {
   background-color: var(--dark-color);
   color: white;
   opacity: 70%;
+  min-height: 2.3rem;
+  font-size: 1.5rem;
 }
 .search-button:hover {
   cursor: pointer;
@@ -58,9 +62,10 @@ input[type="text"]:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effect */
 }
 .background {
-  height: 90vh;
-  width: 85%;
-  margin: 0 1% 1% 1%;
+  height: 80vh;
+  width: 75%;
+  margin: 0 2% 2% 2%;
+  padding-right: 5%;
   background-image: url("default-background.jpg"); /* Default background image for body */
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,11 +75,10 @@ input[type="text"]:hover {
   border-radius: 8px; /* Rounded corners */
   display: flex;
   align-items: center;
-}
-.background:hover {
-  transform: translateY(-10px); /* Moves the element up */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases the shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effect */
+  border-bottom: 6px solid #000000; /* 10px solid black border on bottom */
+  border-right: 6px solid #000000;
+  border-top: 0.5px solid #000000;
+  border-left: 0.5px solid #000000;
 }
 
 .floating-container {
@@ -83,7 +87,7 @@ input[type="text"]:hover {
   bottom: 1%;
   background-color: transparent; /* Transparent background to show only items */
   color: white; /* Text color */
-  padding: 20px; /* Padding inside the container */
+  padding: 5px; /* Padding inside the container */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
   z-index: 1000; /* Ensure it sits on top of other content */
@@ -97,6 +101,10 @@ input[type="text"]:hover {
 
 .floating-container:hover {
   right: 2%; /* Move container into view when hovered */
+  border-bottom: 6px solid #000000; /* 10px solid black border on bottom */
+  border-right: 6px solid #000000;
+  border-top: 0.5px solid #000000;
+  border-left: 0.5px solid #000000;
 }
 
 .flex-items {
@@ -105,11 +113,15 @@ input[type="text"]:hover {
   flex: 1;
   background-size: cover;
   background-position: center;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden; /* Ensure pseudo-element stays within bounds */
   transition: transform 0.3s ease, z-index 0.3s ease;
+  border-bottom: 6px solid #000000; /* 10px solid black border on bottom */
+  border-right: 6px solid #000000;
+  border-top: 0.5px solid #000000;
+  border-left: 0.5px solid #000000;
 }
 
 .flex-items::before {
@@ -123,7 +135,7 @@ input[type="text"]:hover {
     255,
     255,
     255,
-    0.1
+    0.3
   ); /* Adjust color and opacity as needed */
   transition: background-color 1s ease;
   z-index: 1;
