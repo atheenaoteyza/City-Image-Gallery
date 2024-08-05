@@ -58,7 +58,7 @@ input[type="text"]:hover {
 }
 .background {
   height: 90vh;
-  width: 90%;
+  width: 85%;
   margin: 0 1% 1% 1%;
   background-image: url("default-background.jpg"); /* Default background image for body */
   background-size: cover;
@@ -68,7 +68,6 @@ input[type="text"]:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effect */
   border-radius: 8px; /* Rounded corners */
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .background:hover {
