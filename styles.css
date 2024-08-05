@@ -1,13 +1,86 @@
+:root {
+  --dark-color: #413e3e;
+  --noise-texture: url(https://i.gyazo.com/a26366e538851a5c569ff648e99b7fd4.png);
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #e02525; /* Background color for body */
+  background: var(--dark-color);
+  background-image: var(--noise-texture);
+  background-blend-mode: overlay;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.search {
+  margin-top: 1rem;
+  width: 90%;
+  border-radius: 8px;
+  padding: 1rem 0 1rem 0;
+  opacity: 50%;
+  margin: 0.5rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+input[type="text"] {
+  border-bottom: 3px solid #000000; /* 10px solid black border on bottom */
+  border-right: 3px solid #000000;
+  border-top: 0.5px solid #000000;
+  border-left: 0.5px solid #000000;
+
+  border-radius: 4px; /* Rounded corners for input */
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+  background-color: var(--dark-color);
+  color: white;
+  opacity: 100%;
+}
+input[type="text"]:hover {
+  cursor: pointer;
+  transform: translateY(-5px); /* Moves the element up */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effect */
+}
+.search-button {
+  border-bottom: 3px solid #000000; /* 10px solid black border on bottom */
+  border-right: 3px solid #000000;
+  border-top: 0.5px solid #000000;
+  border-left: 0.5px solid #000000;
+  border-radius: 4px; /* Rounded corners for input */
+  background-color: var(--dark-color);
+  color: white;
+  opacity: 70%;
+}
+.search-button:hover {
+  cursor: pointer;
+  transform: translateY(-5px); /* Moves the element up */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effect */
+}
+.background {
+  height: 90vh;
+  width: 90%;
+  margin: 0 1% 1% 1%;
+  background-image: url("default-background.jpg"); /* Default background image for body */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effect */
+  border-radius: 8px; /* Rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background:hover {
+  transform: translateY(-10px); /* Moves the element up */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases the shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effect */
 }
 
 .floating-container {
   position: fixed; /* Fixed position to make it float on the body */
-  bottom: 20%; /* Distance from the bottom of the viewport */
-  right: -20%; /* Start position from the right of the viewport */
+  right: -5%; /* Start position from the right of the viewport */
+  bottom: 1%;
   background-color: transparent; /* Transparent background to show only items */
   color: white; /* Text color */
   padding: 20px; /* Padding inside the container */
@@ -15,38 +88,45 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
   z-index: 1000; /* Ensure it sits on top of other content */
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  height: 40%;
+  height: 80%;
+  width: 20%;
   transition: right 0.3s ease; /* Smooth transition for movement */
 }
 
 .floating-container:hover {
-  right: 0; /* Move container into view when hovered */
+  right: 2%; /* Move container into view when hovered */
 }
 
 .flex-items {
   margin: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.8); /* Background color */
+  flex: 1;
+  background-size: cover; /* Ensure background images cover the element */
+  background-position: center;
   padding: 20px; /* Padding inside the items */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
-  opacity: 100%; /* Full opacity */
   transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition for movement and scaling */
 }
 
 .flex-items:hover {
   transform: scale(1.2) translate(-10px, -10px); /* Scale and move items on hover */
-  z-index: 1100; /* Ensure the hovered item is above others */
+  z-index: 1400; /* Ensure the hovered item is above others */
 }
+
 .one {
-  background-color: blue;
+  background-image: url("image1.jpg"); /* Background image for item one */
 }
+
 .two {
-  background-color: green;
+  background-image: url("image2.jpg"); /* Background image for item two */
 }
+
 .three {
-  background-color: red;
+  background-image: url("image3.jpg"); /* Background image for item three */
 }
+
 .four {
-  background-color: blueviolet;
+  background-image: url("image4.jpg"); /* Background image for item four */
 }

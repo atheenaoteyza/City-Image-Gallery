@@ -1,16 +1,19 @@
 const apiKey = "TWvM_zLxG9ar3m65o0pYxe_7lbNpXHpmhsKc_eR4Qbs";
 
+async function fetchMessage(url) {
+  const response = await fetch(url);
+  const body = await response.json();
+  const { results } = body;
+  return results;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const flexItems = document.querySelectorAll(".flex-items");
 
   flexItems.forEach((item) => {
-    item.addEventListener("mouseover", () => {
-      const color = window.getComputedStyle(item).backgroundColor;
-      document.body.style.backgroundColor = color;
-    });
-
-    item.addEventListener("mouseout", () => {
-      document.body.style.backgroundColor = "#e02525"; // Reset to the default background color
+    item.addEventListener("click", () => {
+      const imageUrl = window.getComputedStyle(item).backgroundImage;
+      document.querySelector(".background").style.backgroundImage = imageUrl;
     });
   });
 });
