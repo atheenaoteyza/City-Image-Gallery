@@ -38,6 +38,7 @@ input[type="text"] {
   color: white;
   opacity: 100%;
   font-size: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 input[type="text"]:hover {
   cursor: pointer;
@@ -170,4 +171,11 @@ input[type="text"]:hover {
 
 .four {
   background-image: url("image4.jpg"); /* Background image for item four */
+}
+
+@media (max-width: 423px) {
+  input[type="text"],
+  .search-button {
+    font-size: 1rem;
+  }
 }
