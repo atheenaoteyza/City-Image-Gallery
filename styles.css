@@ -14,11 +14,12 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
+
 .search {
   margin-top: 1rem;
   width: 90%;
   border-radius: 8px;
-  padding: 1rem 0 1rem 0;
+  padding: 0 1rem 0;
   opacity: 50%;
   margin: 0.5rem;
   margin-bottom: 0;
@@ -99,23 +100,52 @@ input[type="text"]:hover {
 }
 
 .flex-items {
+  position: relative;
   margin: 0.5rem;
   flex: 1;
-  background-size: cover; /* Ensure background images cover the element */
+  background-size: cover;
   background-position: center;
-  padding: 20px; /* Padding inside the items */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
-  transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition for movement and scaling */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensure pseudo-element stays within bounds */
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.flex-items::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Adjust color and opacity as needed */
+  transition: background-color 1s ease;
+  z-index: 1;
 }
 
 .flex-items:hover {
-  transform: scale(1.2) translate(-10px, -10px); /* Scale and move items on hover */
-  z-index: 1400; /* Ensure the hovered item is above others */
+  transform: scale(1.2) translate(-10px, -10px);
+  z-index: 1400;
+}
+
+.flex-items:hover::before {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /* Change color for transition effect */
 }
 
 .one {
   background-image: url("image1.jpg"); /* Background image for item one */
+  transition: background-image;
 }
 
 .two {
